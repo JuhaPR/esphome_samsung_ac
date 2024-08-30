@@ -280,6 +280,11 @@ namespace esphome
       {
         if (target_water_temperature != nullptr)
           target_water_temperature->publish_state(value);
+        if (climate != nullptr)
+        {
+          climate->target_water_temperature = value;
+          climate->publish_state();
+        }        
       }
 
       optional<bool> _cur_power;
