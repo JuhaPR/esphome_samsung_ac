@@ -416,12 +416,14 @@ namespace esphome
                 packet.messages.push_back(waterheaterpower);
             }
 
+// Room target temperature
             if (request.target_temp)
             {
                 MessageSet targettemp(MessageNumber::VAR_in_temp_target_f);
                 targettemp.value = request.target_temp.value() * 10.0;
                 packet.messages.push_back(targettemp);
             }
+// Room target temperature
 
             if (request.water_outlet_target)
             {
@@ -430,12 +432,14 @@ namespace esphome
                 packet.messages.push_back(wateroutlettarget);
             }
 
+// DHW target temperature
             if (request.target_water_temp)
             {
                 MessageSet targetwatertemp(MessageNumber::VAR_in_temp_water_heater_target_f);
                 targetwatertemp.value = request.target_water_temp.value() * 10.0;
                 packet.messages.push_back(targetwatertemp);
             }
+// DHW target temperature
 
             if (request.fan_mode)
             {
@@ -590,6 +594,7 @@ namespace esphome
                 target->set_room_temperature(source, temp);
                 break;
             }
+// Room target temperature            
             case MessageNumber::VAR_in_temp_target_f: // unit = 'Celsius' from XML
             {
                 double temp = (double)message.value / (double)10;
@@ -597,6 +602,7 @@ namespace esphome
                 target->set_target_temperature(source, temp);
                 break;
             }
+// Room target temperature            
             case MessageNumber::VAR_in_temp_water_outlet_target_f: // unit = 'Celsius' from XML
             {
                 double temp = (double)message.value / (double)10;
@@ -604,6 +610,7 @@ namespace esphome
                 target->set_water_outlet_target(source, temp);
                 break;
             }
+// DHW target temperature            
             case MessageNumber::VAR_in_temp_water_heater_target_f: // unit = 'Celsius' from XML
             {
                 double temp = (double)message.value / (double)10;
@@ -611,6 +618,7 @@ namespace esphome
                 target->set_target_water_temperature(source, temp);
                 break;
             }
+// DHW target temperature            
             case MessageNumber::ENUM_in_state_humidity_percent:
             {
                 LOG_MESSAGE(ENUM_in_state_humidity_percent, (double)message.value, source, dest);

@@ -97,12 +97,14 @@ namespace esphome
           dev->update_indoor_eva_out_temperature(value);
       }
 
+// Room target temperature
       void /*MessageTarget::*/ set_target_temperature(const std::string address, float value) override
       {
         Samsung_AC_Device *dev = find_device(address);
         if (dev != nullptr)
           dev->update_target_temperature(value);
       }
+// Room target temperature      
 
       void /*MessageTarget::*/ set_water_outlet_target(const std::string address, float value) override
       {
@@ -111,12 +113,14 @@ namespace esphome
           dev->update_water_outlet_target(value);
       }
 
+// DHW target temperature    
       void /*MessageTarget::*/ set_target_water_temperature(const std::string address, float value) override
       {
         Samsung_AC_Device *dev = find_device(address);
         if (dev != nullptr)
           dev->update_target_water_temperature(value);
       }
+// DHW target temperature    
 
       void /*MessageTarget::*/ set_power(const std::string address, bool value) override
       {

@@ -216,6 +216,7 @@ namespace esphome
         };
       }
 
+// Room target temperature
       void set_target_temperature_number(Samsung_AC_Number *number)
       {
         target_temperature = number;
@@ -226,6 +227,7 @@ namespace esphome
           publish_request(request);
         };
       };
+// Room target temperature
 
       void set_water_outlet_target_number(Samsung_AC_Number *number)
       {
@@ -238,6 +240,7 @@ namespace esphome
         };
       };
 
+// DHW target temperature    
       void set_target_water_temperature_number(Samsung_AC_Number *number)
       {
         target_water_temperature = number;
@@ -248,6 +251,7 @@ namespace esphome
           publish_request(request);
         };
       };
+// DHW target temperature    
 
       void set_climate(Samsung_AC_Climate *value)
       {

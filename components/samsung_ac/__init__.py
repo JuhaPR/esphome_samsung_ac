@@ -368,7 +368,8 @@ async def to_code(config):
             conf = device[CONF_DEVICE_ERROR_CODE]
             sens = await sensor.new_sensor(conf)
             cg.add(var_dev.set_error_code_sensor(sens))
-            
+
+# DHW target temperature    
         if CONF_DEVICE_WATER_TARGET_TEMPERATURE in device:
             conf = device[CONF_DEVICE_WATER_TARGET_TEMPERATURE]
             conf[CONF_UNIT_OF_MEASUREMENT] = UNIT_CELSIUS
@@ -378,7 +379,9 @@ async def to_code(config):
                                           max_value=70.0,
                                           step=0.5)
             cg.add(var_dev.set_target_water_temperature_number(num))
+# DHW target temperature    
 
+# Room target temperature
         if CONF_DEVICE_TARGET_TEMPERATURE in device:
             conf = device[CONF_DEVICE_TARGET_TEMPERATURE]
             conf[CONF_UNIT_OF_MEASUREMENT] = UNIT_CELSIUS
@@ -388,7 +391,8 @@ async def to_code(config):
                                           max_value=30.0,
                                           step=1.0)
             cg.add(var_dev.set_target_temperature_number(num))
-            
+# Room target temperature
+
         if CONF_DEVICE_WATER_OUTLET_TARGET in device:
             conf = device[CONF_DEVICE_WATER_OUTLET_TARGET]
             conf[CONF_UNIT_OF_MEASUREMENT] = UNIT_CELSIUS

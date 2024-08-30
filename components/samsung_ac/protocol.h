@@ -80,12 +80,16 @@ namespace esphome
             virtual void set_automatic_cleaning(const std::string address, bool value) = 0;
             virtual void set_water_heater_power(const std::string address, bool value) = 0;
             virtual void set_room_temperature(const std::string address, float value) = 0;
+// Room target temperature            
             virtual void set_target_temperature(const std::string address, float value) = 0;
+// Room target temperature            
             virtual void set_water_outlet_target(const std::string address, float value) = 0;
             virtual void set_outdoor_temperature(const std::string address, float value) = 0;
             virtual void set_indoor_eva_in_temperature(const std::string address, float value) = 0;
             virtual void set_indoor_eva_out_temperature(const std::string address, float value) = 0;
+// DHW target temperature                
             virtual void set_target_water_temperature(const std::string address, float value) = 0;
+// DHW target temperature                
             virtual void set_mode(const std::string address, Mode mode) = 0;
             virtual void set_water_heater_mode(const std::string address, WaterHeaterMode waterheatermode) = 0;
             virtual void set_fanmode(const std::string address, FanMode fanmode) = 0;
@@ -105,9 +109,13 @@ namespace esphome
             optional<bool> water_heater_power;
             optional<Mode> mode;
             optional<WaterHeaterMode> waterheatermode;
+// Room target temperature            
             optional<float> target_temp;
+// Room target temperature            
             optional<float> water_outlet_target;
+// DHW target temperature            
             optional<float> target_water_temp;
+// DHW target temperature            
             optional<FanMode> fan_mode;
             optional<SwingMode> swing_mode;
             optional<AltMode> alt_mode;

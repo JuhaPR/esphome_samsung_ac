@@ -90,10 +90,19 @@ namespace esphome
       traits();
 
       ProtocolRequest request;
-
+// Room target temperature
       auto targetTempOpt = call.get_target_temperature();
       if (targetTempOpt.has_value())
         request.target_temp = targetTempOpt.value();
+// Room target temperature
+
+
+// DHW target temperature
+      auto targetwaterTempOpt = call.get_target_temperature();
+      if (targetwaterTempOpt.has_value())
+        request.target_water_temp = targetwaterTempOpt.value();
+// DHW target temperature
+
 
       auto modeOpt = call.get_mode();
       if (modeOpt.has_value())

@@ -81,12 +81,12 @@ namespace esphome
             ENUM_in_louver_hl_swing = 0x4011,
             ENUM_in_louver_lr_swing = 0x407e,
             ENUM_in_state_humidity_percent = 0x4038,
-            VAR_in_temp_room_f = 0x4203,
-            VAR_in_temp_target_f = 0x4201,
+            VAR_in_temp_room_f = 0x4203,                            // Room Temperature
+            VAR_in_temp_target_f = 0x4201,                          // Room target temperature
             VAR_in_temp_water_outlet_target_f = 0x4247,
-            VAR_in_temp_water_tank_f = 0x4237,
+            VAR_in_temp_water_tank_f = 0x4237,                      // DHW tank current temperature
             VAR_out_sensor_airout = 0x8204,
-            VAR_in_temp_water_heater_target_f = 0x4235,
+            VAR_in_temp_water_heater_target_f = 0x4235,             // DHW target temperature
             VAR_in_temp_eva_in_f = 0x4205,
             VAR_in_temp_eva_out_f = 0x4206,
             VAR_out_error_code = 0x8235,

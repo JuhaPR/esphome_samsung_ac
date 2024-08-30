@@ -581,11 +581,15 @@ namespace esphome
                 if (!pending_control_message)
                 {
                    last_command20s_[nonpacket_.src] = nonpacket_.command20;
+// Room target temperature                   
                    target->set_target_temperature(nonpacket_.src, nonpacket_.command20.target_temp);
+// Room target temperature                   
                    // TODO
                    target->set_water_outlet_target(nonpacket_.src, false);
+// DHW target temperature    
                    // TODO
                    target->set_target_water_temperature(nonpacket_.src, false);
+// DHW target temperature                       
                    target->set_room_temperature(nonpacket_.src, nonpacket_.command20.room_temp);
                    target->set_power(nonpacket_.src, nonpacket_.command20.power);
                    // TODO
